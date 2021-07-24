@@ -3,6 +3,7 @@
   --colorB: rgb(84, 214, 214);
   --colorC: rgb(50, 112, 148);
   --colorD: yellow;
+  --colorF: aliceblue;
 }
 .body{
   background-color: var(--colorA);
@@ -14,6 +15,11 @@
 }
 .main{
   background-image: radial-gradient(ellipse at 50% 0%, var(--colorB) 30%, var(--colorC));
-  padding: .5em .25em;
+  padding: .5em .1em;
   border: .1em double var(--colorD);
+}
+.main-section-div-audio{
+  margin: 0px;
+  margin-top: .2em;
+  color: var(--colorF);
 }
