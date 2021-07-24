@@ -1,0 +1,19 @@
+:root{
+  --colorA: rgb(197, 253, 244);
+  --colorB: rgb(84, 214, 214);
+  --colorC: rgb(50, 112, 148);
+  --colorD: yellow;
+}
+.body{
+  background-color: var(--colorA);
+}
+.header, .main{
+  max-width: 500px;
+  text-align: center;
+  margin: 2em auto;
+}
+.main{
+  background-image: radial-gradient(ellipse at 50% 0%, var(--colorB) 30%, var(--colorC));
+  padding: .5em;
+  border: .1em double var(--colorD);
+}
