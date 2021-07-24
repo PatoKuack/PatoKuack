@@ -14,6 +14,6 @@
 }
 .main{
   background-image: radial-gradient(ellipse at 50% 0%, var(--colorB) 30%, var(--colorC));
-  padding: .5em;
+  padding: .5em .25em;
   border: .1em double var(--colorD);
 }
