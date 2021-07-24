@@ -15,7 +15,7 @@
 }
 .main{
   background-image: radial-gradient(ellipse at 50% 0%, var(--colorB) 30%, var(--colorC));
-  padding: .5em .1em;
+  padding: .5em 0em;
   border: .1em double var(--colorD);
 }
 .main-section-div-audio{
