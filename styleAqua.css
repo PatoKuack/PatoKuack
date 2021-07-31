@@ -13,6 +13,9 @@
 }
 .body{
   background-color: var(--colorA);
+  /* background-color: var(--colorC);
+  color: var(--colorF);
+  font-weight: bold; */
 }
 .header, .main{
   max-width:  500px;
