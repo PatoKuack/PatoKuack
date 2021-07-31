@@ -1,32 +1,41 @@
 :root{
-  --colorA: rgb(197, 253, 244);
-  --colorB: rgb(84, 214, 214);
-  --colorC: rgb(50, 112, 148);
-  --colorD: yellow;
-  --colorD: rgb(255, 201, 83);
-  --colorF: aliceblue;
+  --colorA: rgb(254,167,191);
+  --colorB: transparent;
+  --colorC: rgb(255, 0, 0);
+  --colorD: black;
+  --colorF: lavenderblush;
   --colorG: rgba(0, 0, 0, 0.322);
-  --colorH: rgb(143, 15, 202);
+  --colorH: rgb(127,80,8);
 
-  --sizeTitle:    1.5em;
-  --sizeSubTitle: .5em;
+  --sizeTitle:    4rem;
+  --sizeSubTitle: 1.5rem;
+
+  --fontForeignTit: 'Shadows Into Light';
+  --fontForeignTxt: 'Comic Neue';
+  --fontDefault:    'sans-serif';
 }
+
+*, *:before, *:after{box-sizing: border-box;}
+
 .body{
-  background-color: var(--colorA);
-  /* background-color: var(--colorC);
-  color: var(--colorF);
-  font-weight: bold; */
+  background-image:
+  radial-gradient(circle, var(--colorF) 3%, var(--colorA) 7%);
+  background-position: -2em 3em;
+  background-size: 15em 11em;
+  background-attachment: fixed;
 }
 .header, .main{
   max-width:  500px;
   text-align: center;
-  margin:     2em auto;
+  margin:     1em auto 0em auto;
 }
 .m-s-div{
   margin-bottom: 2em;
+  font-size: var(--sizeSubTitle);
+  font-family: var(--fontForeignTxt), var(--fontDefault);
 }
 .bg-dark{
-  background-image: radial-gradient(ellipse at 50% 0%, var(--colorB) 30%, var(--colorC));
+  background-image: radial-gradient(ellipse at 50% 0%, var(--colorB) 20%, var(--colorC));
   color:            var(--colorF);
 }
 .m-s-d-f-e-button{
@@ -39,23 +48,32 @@
   box-shadow: 0px 0px 0px 0px var(--colorG);
 }
 .size-title{
+  font-family: var(--fontForeignTit), var(--fontDefault);
   font-size: var(--sizeTitle);
+  margin-top: 2rem;
+  margin-bottom: 0;
 }
-.m-s-d-title{
-  margin-bottom: var(--sizeSubTitle);
+.emoji{
+  font-size: 3em;
 }
 .m-s-d-audio{
   border:   .1em double var(--colorD);
-  padding:  .5em 0em .3em 0em;
+  padding:  1rem 0rem;
   margin:   0px;
+}
+.noFont{
+  font-family: initial;
 }
 .m-s-d-article{
   margin-top:       0px;
   border:           .1em double var(--colorD);
   background-color: var(--colorH);
   color:          aliceblue;
-  padding:          .2em;
+  padding:          1.5rem;
   box-shadow:       -1.5em -1.5em .5em 0em var(--colorG) inset;
+}
+.m-s-d-a-description{
+  margin: 0;
 }
 .m-s-d-iframe{
   min-height: 250px;
