@@ -1,0 +1,116 @@
+*, *::before, *::after {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', 'sans-serif'; }
+
+a {
+  text-decoration: none; }
+
+img {
+  max-width: 100%; }
+
+.margin-auto {
+  margin-left: auto;
+  margin-right: auto; }
+
+.header-container {
+  max-width: 1200px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex; }
+
+.header {
+  height: 4rem;
+  border-bottom: 1px solid #b4d3dd; }
+
+.header-container {
+  justify-content: space-between;
+  align-items: center;
+  height: 100%; }
+
+.heder-container-logo {
+  display: flex;
+  align-items: center; }
+
+.logo {
+  height: calc(4rem / 2); }
+
+.text-logo {
+  padding-left: .3rem; }
+
+.menu {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem; }
+  .menu-item {
+    color: #284255;
+    margin-left: 1rem;
+    padding: .5rem 1rem; }
+  @media screen and (min-width: 768px) {
+    .menu {
+      padding-top: 0;
+      flex-direction: row; }
+      .menu-item {
+        margin-left: 0; } }
+
+.navigator {
+  right: -80vw;
+  position: fixed;
+  height: calc(100vh - 4rem);
+  width: 80vw;
+  top: 4rem;
+  transition: right .5s; }
+  .navigator.show {
+    right: 0; }
+  @media screen and (min-width: 768px) {
+    .navigator {
+      position: static;
+      height: auto;
+      width: auto; } }
+
+.toggle {
+  width: 2.2rem;
+  height: 1.8rem;
+  position: relative;
+  cursor: pointer;
+  transition: transform .5s; }
+  .toggle::before, .toggle::after {
+    content: '';
+    display: block; }
+  .toggle::before, .toggle::after, .toggle-lines {
+    width: 100%;
+    height: 20%;
+    background-color: #284255;
+    position: absolute; }
+  .toggle.active {
+    transform: rotate(-90deg); }
+  .toggle::before {
+    top: 0%;
+    transition: transform .5s .5s, top .5s .5s; }
+  .toggle.active::before {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg); }
+  .toggle-lines {
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+    transition: width .5s .5s, left .5s .5s; }
+  .toggle.active .toggle-lines {
+    transition: width .5s, left .5s;
+    width: 20%;
+    left: 40%; }
+  .toggle::after {
+    bottom: 0%;
+    transition: transform .5s .5s, bottom .5s .5s; }
+  .toggle.active::after {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg); }
+  @media screen and (min-width: 768px) {
+    .toggle {
+      display: none; } }

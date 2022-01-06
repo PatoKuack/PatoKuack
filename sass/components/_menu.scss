@@ -1,0 +1,126 @@
+.menu{ //Menú del navegador de la cabecera.
+  // Resetear menú
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+  //--------------
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+
+  &-item{
+    color: $text-color;
+    margin-left: 1rem;
+    padding: .5rem 1rem;
+  }
+
+  @include from(m){
+    padding-top: 0;
+    flex-direction: row;
+
+    &-item{
+      margin-left: 0;
+    }
+  }
+}
+
+.navigator{ //Navegador de la cabecera.
+  right: -80vw;
+  position: fixed;
+  height: calc(100vh - #{$header-height});
+  width: 80vw;
+  top: $header-height;
+  transition: right .5s;
+
+  &.show{
+    right: 0;
+  }
+
+  @include from(m){
+    position: static;
+    height: auto;
+    width: auto;
+  }
+}
+
+.toggle{ //Botón hamburguesa.
+  width: 2.2rem;
+  height: 1.8rem;
+  position: relative;
+  cursor: pointer;
+  transition: transform .5s;
+
+  &::before, &::after{
+    content: '';
+    display: block;
+  }
+  &::before, &::after, &-lines{
+    width: 100%;
+    height: 20%;
+    background-color: $text-color;
+    position: absolute;
+  }
+
+  //Animación de botón hamburguesa.
+  &.active{
+    transform: rotate(-90deg);
+  }
+  &::before{
+    top: 0%;
+    transition: transform .5s .5s, top .5s .5s;
+  }
+  &.active::before{
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  &-lines{
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+    transition: width .5s .5s, left .5s .5s;
+  }
+  &.active &-lines{
+    transition: width .5s, left .5s;
+    width: 20%;
+    left: 40%;
+  }
+  &::after{
+    bottom: 0%;
+    transition: transform .5s .5s, bottom .5s .5s;
+  }
+  &.active::after{
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+  }
+  //------------------------------
+
+  @include from(m){
+    display: none;
+  }
+}
+
+
+// .item, .sub-item{
+//   display: inline-block;
+//   padding: .3rem .5rem;
+//   list-style-type: none;
+//   border: 2px double rgb(172, 79, 12);
+//   position: relative;
+//   background-color: rgb(250, 197, 183);
+// }
+// .sub-menu{
+//   position: absolute;
+//   display: none;
+// }
+// [class$="item"]:hover > .sub-menu{
+//   display: flex;
+//   flex-direction: column;
+// }
+// [class$="item"]:hover{
+//   background-color: rgb(252, 159, 134);
+// }
+// .item .sub-menu{
+//   top: 0;
+//   right: 100%;
+// }
