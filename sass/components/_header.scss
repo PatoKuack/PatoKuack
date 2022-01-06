@@ -1,0 +1,20 @@
+.header{
+  height: $header-height;
+  border-bottom: 1px solid $border-color;
+}
+
+.header-container{
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.heder-container-logo{
+  display: flex;
+  align-items: center;
+}
+.logo{
+  height: calc(#{$header-height} / 2);
+}
+.text-logo{
+  padding-left: .3rem;
+}
