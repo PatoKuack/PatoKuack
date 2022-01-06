@@ -1,0 +1,13 @@
+$max-width: 1200px;
+$header-height: 4rem;
+
+$border-color: rgb(180, 211, 221);
+$text-color: #284255;
+
+$breackpoints: (
+  xs: 360px, //celular de pantalla pequeña
+  s: 440px, //celular de pantalla grande
+  m: 768px, //tablet
+  l: 1280px, //laptop
+  xl: 1440px //computadora de pantalla grande
+);

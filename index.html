@@ -4,41 +4,56 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- fuentes: -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styleAqua.css">
-  <title>Felicidades</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> 
+  <!-- -------- -->
+  <!-- estilos: -->
+  <link rel="stylesheet" href="./css/styles.css">
+  <!-- -------- -->
+  <title>Pato Kuack</title>
 </head>
 <body class="body">
+  <!-- header: título y navegador -->
   <header class="header">
-    <h1 class="size-title">¡¡¡Feliz cumpleaños!!!</h1>
-  </header>
-  <main class="main">
-    <nav class="m-nav"></nav>
-    <section class="m-section">
-      <div class="m-s-div">
-        <p class="m-s-d-title">Aunque no nos veamos, la quiero un chorro.<br/><span class="emoji">\&#128515;/<span></b></p>
-        <figure class="m-s-d-audio bg-dark">
-          <audio src="Binarios/felicitacion.mp4" controls>Felicitacion</audio>
-          <figcaption class="noFont">Hecho por Cano</figcaption>
-        </figure>
-        <article class="m-s-d-article">
-          <p class="m-s-d-a-description">
-            La visitaré más frecuentemente cuando nos vacunen a Edna y a mí, creo que somos los últimos que faltamos
-          </p>
-          <p class="m-s-d-a-description">
-            Debería pintar mientras está encerrada o venirse un día a que nos enseñe a hacer algo de comer o a contarnos alguna aventura de su vida.
-          </p>
-          <p class="m-s-d-a-description emoji">
-            &#127874;
-          </p>
-        </article>
+    <div class="header-container margin-auto">
+      <div class="heder-container-logo">
+        <img src="binarios/logo_duck.svg" alt="logo de iconfinder" class="logo">
+        <span class="text-logo">Pato Kuack</span>
       </div>
+      <div class="toggle" id="menu-toggle">
+        <div class="toggle-lines"></div>
+      </div>
+      <nav class="navigator" id="menu-navigator">
+        <ul class="menu">
+          <li class="menu-item"><a class="menu-link" href="">Acerca de mí</a></li>
+          <li class="menu-item"><a class="menu-link" href="">Objetivos y metas</a></li>
+          <li class="menu-item"><a class="menu-link" href="">Proyectos</a></li>
+          <li class="menu-item"><a class="menu-link" href="">Experiencia</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- div.banner: presentación -->
+  <div class="banner">
+    <div class="banner-content">
+      <img src="" alt="" class="banner-img">
+      <h1 class="banner-title"></h1>
+      <p class="banner-description"></p>
+    </div>
+  </div>
+  <!-- main: contenido -->
+  <main class="main">
+    <section class="main-aboutme">
+      <p>illium</p> <p>apsinat</p> <p>erus</p> <p>li</p> <p>a</p> <p>cumu</p> <p>a</p> <p>torom</p> <p>yini</p> <p>mise</p> <p>te</p> <p>acome</p>
     </section>
+    <section class="main-objmetas"></section>
+    <section class="main-proyectos"></section>
+    <section class="main-experiencia"></section>
   </main>
   <footer class="footer"></footer>
+  <script src="javascript/scripts.js"></script>
 </body>
 </html>
     <!-- <p>En esta página podrás ver mi presentación profesional ante el mundo laboral.</p> -->
