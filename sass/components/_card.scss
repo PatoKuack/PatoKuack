@@ -1,15 +1,57 @@
-.card-aboutme{
-  & > *{
-    width: 100%;
+.card{
+  padding: $max-space 0;
+
+  &-proj-image{
+    display: block;
   }
-  &-content{
-    grid-area: 1/1/2/5;
+  &-projects-content-multiple{
     padding: $normal-space;
-    text-align: center;
-    // align-self: center;
-    justify-self: center;
-    @include from(m){
-      grid-column: 1/13;
-    }
+    border: 1px solid $border-color;
+  }
+  &-proj-subtitle{
+    margin-top: -.1rem;
+    margin-bottom: $min-space;
+    opacity: .6;
+  }
+  &-proj-footer{
+    border-top: 1px solid $border-color;
+    margin-top: $normal-space;
+    padding-top: $normal-space;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
+
+.title-content-unique{
+  border-bottom: 1px solid $border-color;
+}
+
+
+[class$="#{-content-unique}"]{
+  grid-area: 1/1/2/5;
+  @include from(m){
+    grid-column: 1/13;
+  }
+}
+[class$="#{-content-double}"]{
+  grid-column: span 4;
+  grid-row: span 1;
+  @include from(m){
+    grid-column: span 6;
+    grid-row: span 1;
+  }
+}
+[class$="#{-content-multiple}"]{
+  grid-column: span 4;
+  grid-row: span 1;
+  @include from(m){
+    grid-column: span 6;
+    grid-row: span 1;
+  }
+  @include from(l){
+    grid-column: span 4;
+    grid-row: span 1;
+  }
+}
+
