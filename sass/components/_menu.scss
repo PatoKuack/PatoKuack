@@ -1,5 +1,5 @@
 .menu{ //Menú del navegador de la cabecera.
-  // Resetear menú
+  // Resetear menú.
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
@@ -7,20 +7,28 @@
   //--------------
   display: flex;
   flex-direction: column;
-  padding-top: 1rem;
+  // align-items: center;
+  padding-top: $normal-space;
 
-  &-item{
-    color: $text-color;
-    margin-left: 1rem;
-    padding: .5rem 1rem;
+  &-link{
+    margin-left: $normal-space;
+    padding: $normal-space;
+    display: flex;
+    align-items: center;
+  }
+  &-link:hover{
+    background-color: $border-color;
   }
 
   @include from(m){
     padding-top: 0;
     flex-direction: row;
+    height: 100%;
 
-    &-item{
+    &-link{
       margin-left: 0;
+      padding: 0 $max-space;
+      height: 100%;
     }
   }
 }
@@ -29,9 +37,12 @@
   right: -80vw;
   position: fixed;
   height: calc(100vh - #{$header-height});
-  width: 80vw;
+  width: 70vw;
   top: $header-height;
   transition: right .5s;
+  z-index: var(--z-fixed);
+  border-left: 1px solid $border-color;
+  background-color: $background-color;
 
   &.show{
     right: 0;
@@ -39,8 +50,9 @@
 
   @include from(m){
     position: static;
-    height: auto;
+    height: 90%;
     width: auto;
+    border: none;
   }
 }
 
@@ -99,28 +111,3 @@
     display: none;
   }
 }
-
-
-// .item, .sub-item{
-//   display: inline-block;
-//   padding: .3rem .5rem;
-//   list-style-type: none;
-//   border: 2px double rgb(172, 79, 12);
-//   position: relative;
-//   background-color: rgb(250, 197, 183);
-// }
-// .sub-menu{
-//   position: absolute;
-//   display: none;
-// }
-// [class$="item"]:hover > .sub-menu{
-//   display: flex;
-//   flex-direction: column;
-// }
-// [class$="item"]:hover{
-//   background-color: rgb(252, 159, 134);
-// }
-// .item .sub-menu{
-//   top: 0;
-//   right: 100%;
-// }

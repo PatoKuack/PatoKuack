@@ -14,45 +14,57 @@
   <!-- -------- -->
   <title>Pato Kuack</title>
 </head>
-<body class="body">
+<body class="body" id="body">
   <!-- header: título y navegador -->
   <header class="header">
-    <div class="header-container margin-auto">
+    <div class="header-container">
       <div class="heder-container-logo">
-        <img src="binarios/logo_duck.svg" alt="logo de iconfinder" class="logo">
+        <img src="binarios/logo_duck.svg" alt="logo de pato" title="logo de pato" class="logo">
         <span class="text-logo">Pato Kuack</span>
       </div>
       <div class="toggle" id="menu-toggle">
         <div class="toggle-lines"></div>
       </div>
-      <nav class="navigator" id="menu-navigator">
+      <!-- <nav class="navigator" id="menu-navigator">
         <ul class="menu">
           <li class="menu-item"><a class="menu-link" href="">Acerca de mí</a></li>
           <li class="menu-item"><a class="menu-link" href="">Objetivos y metas</a></li>
           <li class="menu-item"><a class="menu-link" href="">Proyectos</a></li>
           <li class="menu-item"><a class="menu-link" href="">Experiencia</a></li>
         </ul>
+      </nav> -->
+      <nav class="navigator" id="menu-navigator">
+        <ul class="menu">
+          <a class="menu-link" href=""><li class="menu-item">Acerca de mí</li></a>
+          <a class="menu-link" href=""><li class="menu-item">Objetivos y metas</li></a>
+          <a class="menu-link" href=""><li class="menu-item">Proyectos</li></a>
+          <a class="menu-link" href=""><li class="menu-item">Experiencia</li></a>
+        </ul>
       </nav>
     </div>
   </header>
   <!-- div.banner: presentación -->
-  <div class="banner">
+  <div class="banner" id="banner">
+    <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Palacio_de_Bellas_Artes_-_CDMX.jpg" alt="Banner background" class="banner-heroimage"> -->
     <div class="banner-content">
-      <img src="" alt="" class="banner-img">
-      <h1 class="banner-title"></h1>
-      <p class="banner-description"></p>
+      <img src="binarios/profile_small.jpg" alt="foto de perfil" title="foto de perfil" class="banner-content-img">
+      <h1 class="banner-content-title">David Alejandro Ramírez Pérez</h1>
+      <p class="banner-content-description">Front-end junior</p>
     </div>
   </div>
   <!-- main: contenido -->
-  <main class="main">
-    <section class="main-aboutme">
-      <p>illium</p> <p>apsinat</p> <p>erus</p> <p>li</p> <p>a</p> <p>cumu</p> <p>a</p> <p>torom</p> <p>yini</p> <p>mise</p> <p>te</p> <p>acome</p>
+  <main class="card" id="card">
+    <section class="card-aboutme layer-container">
+      <div class="card-aboutme-content">
+        <h2>Acerca de mí:</h2>
+        <p>soy</p>
+      </div>
     </section>
-    <section class="main-objmetas"></section>
-    <section class="main-proyectos"></section>
-    <section class="main-experiencia"></section>
+    <section class="card-objmetas"></section>
+    <section class="card-proyectos"></section>
+    <section class="card-experiencia"></section>
   </main>
-  <footer class="footer"></footer>
+  <footer class="footer" id="footer"></footer>
   <script src="javascript/scripts.js"></script>
 </body>
 </html>

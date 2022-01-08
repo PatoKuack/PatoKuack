@@ -1,9 +1,21 @@
 *, *::before, *::after{
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 body{
+  font-family: $font-family-first;
+  font-size: var(--body-font-size);
+  background-color: $background-color;
+  color: $text-color;
+  position: relative;
   margin: 0;
-  font-family: 'Open Sans', 'sans-serif';
+}
+h1{
+  font-size: var(--h1-font-size);
+}
+h2{
+  font-size: var(--h2-font-size);
 }
 a{
   text-decoration: none;
@@ -11,6 +23,7 @@ a{
 img{
   max-width: 100%;
 }
+
 
 .margin-auto{
   margin-left: auto;

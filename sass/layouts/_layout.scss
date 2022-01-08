@@ -1,6 +1,36 @@
-.header-container{
-  max-width: $max-width;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  display: flex;
+//Columnas grid:
+:root{
+  --columns: 4;
+  --column-gap: 6.67%;
+
+  @include from(m){
+    --columns: 12;
+    --column-gap: 2.27%;
+  }
+
+  @include from(m){
+    --columns: 12;
+    --column-gap: 2.19%;
+  }
+}
+
+.layer-container{
+  margin: 0 1rem;
+  @include from(m){
+    margin: 0 2rem;
+  }
+  @include from(l){
+    margin: 0 5rem;
+  }
+  @include from(xl){
+    margin: 0 auto;
+    max-width: $max-width;
+  }
+}
+
+.layer-container, .layer-subcontainer{
+  display: grid;
+  grid-column-gap: var(--column-gap);
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  position: relative;
 }

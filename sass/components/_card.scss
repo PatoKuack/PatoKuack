@@ -1,0 +1,15 @@
+.card-aboutme{
+  & > *{
+    width: 100%;
+  }
+  &-content{
+    grid-area: 1/1/2/5;
+    padding: $normal-space;
+    text-align: center;
+    // align-self: center;
+    justify-self: center;
+    @include from(m){
+      grid-column: 1/13;
+    }
+  }
+}
