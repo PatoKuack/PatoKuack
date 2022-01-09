@@ -8,7 +8,8 @@ $breackpoints: (
 
 //Paleta de colores:
 :root{
-  --first-color       : #b8eafd;
+  --first-color       : rgb(246, 253, 255);
+  --border-color      : #b8eafd;
   --background-color  : aliceblue;
   --text-color        : #284255;
   --alert-color       : tomato;
@@ -53,9 +54,10 @@ $min-space      : .5rem;
 $normal-space   : 1rem;
 $max-space      : 2rem;
 
-$border-color     : var(--first-color);
+$text-color       : var(--text-color);      
+$border-color     : var(--border-color);
 $background-color : var(--background-color);
-$text-color       : var(--text-color);
+$bg-alternative   : var(--first-color);
 $button-color     : var(--alert-color);
 
 $font-family-first: 'Open Sans', 'sans-serif';

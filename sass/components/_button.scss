@@ -4,7 +4,6 @@
   border: 1px solid;
   padding: $min-space $normal-space;
   border-radius: .25rem;
-  width: 8rem;
   font-weight: bold;
 
   &:hover{
@@ -12,13 +11,13 @@
     color: $background-color;
   }
   &-l-github{
-    background-image: url('../../binarios/github.svg');
+    background-image: url('../../binarios/github_button.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
   }
   &-l-web{
-    background-image: url('../../binarios/working.svg');
+    background-image: url('../../binarios/workin-button.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;

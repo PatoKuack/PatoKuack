@@ -1,9 +1,13 @@
 .banner{
   //Como las modificaciones en media query son pocas, se crean variables y se modifican según la media query.
-  --banner-padding: 5rem #{$normal-space} 3rem;
+  --banner-padding: 6rem #{$normal-space} 4rem;
   --banner-logo-height: 9rem;
   @include from(m){
     --banner-padding: 8rem #{$normal-space} 6rem;
+    --banner-logo-height: 12.5rem;
+  }
+  @include from(l){
+    --banner-padding: 8.5rem #{$normal-space} 6rem;
     --banner-logo-height: 12.5rem;
   }
   //-------------------------------------

@@ -27,8 +27,13 @@
 
     &-link{
       margin-left: 0;
-      padding: 0 $max-space;
+      padding: 0 $normal-space;
       height: 100%;
+    }
+  }
+  @include from(l){
+    &-link{
+      padding: 0 $max-space;
     }
   }
 }
