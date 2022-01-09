@@ -18,6 +18,7 @@
 .heder-container-logo{
   display: flex;
   align-items: center;
+  scroll-padding-top: $header-height;
 }
 .logo{
   height: calc(#{$header-height} / 1.8);

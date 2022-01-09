@@ -3,6 +3,10 @@
   margin: 0;
   padding: 0;
 }
+html{
+  scroll-behavior: smooth;
+}
+
 body{
   font-family: $font-family-first;
   font-size: var(--body-font-size);

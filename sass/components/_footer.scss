@@ -12,6 +12,7 @@
   
   &-copyright{
     font-size: small;
+    padding: $normal-space 0 $min-space 0;
   }
 }
 
@@ -25,13 +26,18 @@
     text-align: center;
   }
   &-container{
-    margin-top: $min-space;
+    padding-top: $min-space;
+    height: $max-space;
   }
-  &-logo {
-    margin-right: $normal-space;
+  &-logo{
+    padding: 0 $min-space;
+    height: 100%;
+  }
+  &-logo > *{
+    height: 100%;
   }
 }
 
 [src$=".webp"]{
-  height: 24px;
+  filter: brightness(0%)
 }

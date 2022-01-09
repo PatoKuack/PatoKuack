@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- No guardar cache en navegadores -->
+  <meta http-equiv="Last-Modified" content="0">
+  <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <!-- ------------------- -->
   <!-- fuentes: -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,10 +24,10 @@
   <!-- header: título y navegador -->
   <header class="header">
     <div class="header-container">
-      <div class="heder-container-logo">
+      <a href="#banner" class="heder-container-logo">
         <img src="binarios/logo_duck.svg" alt="logo de pato" title="logo de pato" class="logo">
         <span class="text-logo">Pato Kuack</span>
-      </div>
+      </a>
       <div class="toggle" id="menu-toggle">
         <div class="toggle-lines"></div>
       </div>
@@ -35,10 +41,11 @@
       </nav> -->
       <nav class="navigator" id="menu-navigator">
         <ul class="menu">
-          <a class="menu-link" href=""><li class="menu-item">Acerca de mí</li></a>
-          <a class="menu-link" href=""><li class="menu-item">Objetivos y metas</li></a>
-          <a class="menu-link" href=""><li class="menu-item">Proyectos</li></a>
-          <a class="menu-link" href=""><li class="menu-item">Experiencia</li></a>
+          <a class="menu-link" href="#aboutme"><li class="menu-item">Acerca de mí</li></a>
+          <a class="menu-link" href="#obj_goal"><li class="menu-item">Objetivos y metas</li></a>
+          <a class="menu-link" href="#projects"><li class="menu-item">Proyectos</li></a>
+          <!-- <a class="menu-link" href="#experience"><li class="menu-item">Experiencia</li></a> -->
+          <a class="menu-link" href="#footer"><li class="menu-item">Redes sociales</li></a>
         </ul>
       </nav>
     </div>
@@ -54,13 +61,13 @@
   </div>
   <!-- main: contenido -->
   <main class="card" id="card">
-    <section class="card-aboutme layer-container">
+    <section class="card-aboutme layer-container" id="aboutme">
       <div class="card-aboutme-content-unique">
         <h2>Acerca de mí:</h2>
-        <p>Soy un apacionado de la programación y del constante aprendizaje en múltiples áreas, tanto en habilidades blandas como en habilidades duras o técnicas.</p>
+        <p>Soy un apasionado de la programación y del constante aprendizaje en múltiples áreas, tanto en habilidades blandas como en habilidades duras o técnicas.</p>
       </div>
     </section>
-    <section class="card-obj_goal layer-container">
+    <section class="card-obj_goal layer-container" id="obj_goal">
       <div class="card-objectives-content-double">
         <h3>Objetivos:</h3>
       </div>
@@ -69,13 +76,13 @@
       </div>
     </section>
     <div class="card-diagonal">
-      <section class="card-projects layer-container">
+      <section class="card-projects layer-container" id="projects">
         <h2 class="title-content-unique">Proyectos:</h2>
         <div class="card-projects-content-multiple">
           <div class="card-proj-main">
             <div class="card-proj-title">Manual HTML</div>
             <div class="card-proj-subtitle">Completado: 90%</div>
-            <div class="card-proj-description">Creé un pequeño manual de HTML en la marcha en que iba aprendiendo en HTML.</div>
+            <div class="card-proj-description">Creé un pequeño manual del lenguaje HTML en la marcha en que iba aprendiendo HTML.</div>
           </div>
           <div class="card-proj-footer">
             <a href="https://github.com/PatoKuack/DisenoWeb" target="_blank" rel="noopener noreferrer"><button class="button button-l-github">Ver repositorio</button></a>
@@ -86,7 +93,7 @@
           <div class="card-proj-main">
             <div class="card-proj-title">Manual CSS</div>
             <div class="card-proj-subtitle">Completado: 70%</div>
-            <div class="card-proj-description">Creé un pequeño manual de CSS en la marcha en que iba aprendiendo en HTML y CSS.</div>
+            <div class="card-proj-description">Creé un pequeño manual de CSS en la marcha en que iba aprendiendo HTML y CSS.</div>
           </div>
           <div class="card-proj-footer">
             <a href="https://github.com/PatoKuack/DisenoWeb" target="_blank" rel="noopener noreferrer"><button class="button button-l-github">Ver repositorio</button></a>
@@ -97,7 +104,7 @@
           <div class="card-proj-main">
             <div class="card-proj-title">Manual JavaScript</div>
             <div class="card-proj-subtitle">Completado: 60%</div>
-            <div class="card-proj-description">Creé un pequeño manual de JavaScript en la marcha en que iba aprendiendo en CSS y JavaScript.</div>
+            <div class="card-proj-description">Creé un pequeño manual de JavaScript en la marcha en que iba aprendiendo CSS y JavaScript.</div>
           </div>
           <div class="card-proj-footer">
             <a href="https://github.com/PatoKuack/DisenoWeb" target="_blank" rel="noopener noreferrer"><button class="button button-l-github">Ver repositorio</button></a>

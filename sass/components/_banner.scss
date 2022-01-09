@@ -37,6 +37,7 @@
     }
 
     &-img{
+      margin-bottom: $normal-space;
       max-height: var(--banner-logo-height);
       display: block;
       border: 3px solid $text-color;
