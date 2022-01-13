@@ -1,6 +1,10 @@
 .card{
   // scroll-behavior: smooth;
 
+  &-projects, &-aboutme, &-obj_goal{
+    scroll-margin-top: $header-height;
+  }
+
   &-diagonal{
     position: relative;
     &::before{

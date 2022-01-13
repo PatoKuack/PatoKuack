@@ -58,7 +58,8 @@ h3, h4, h3, h6 {
   font-size: var(--h3-font-size); }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: currentColor; }
 
 img {
   max-width: 100%; }
@@ -148,8 +149,7 @@ img {
     margin-left: 1rem;
     padding: 1rem;
     display: flex;
-    align-items: center;
-    scroll-padding-top: var(--header-height); }
+    align-items: center; }
   .menu-link:hover {
     background-color: var(--border-color); }
   @media screen and (min-width: 768px) {
@@ -232,7 +232,8 @@ img {
   position: relative;
   text-align: center;
   clip-path: polygon(0 0, 100% 0, 100% 94%, 50% 100%, 0 94%, 0 0);
-  background-color: var(--border-color); }
+  background-color: var(--border-color);
+  background-image: linear-gradient(0deg, var(--border-color) 30%, var(--background-color) 90%); }
   @media screen and (min-width: 768px) {
     .banner {
       --banner-padding: 8rem 1rem 6rem;
@@ -260,6 +261,9 @@ img {
       display: block;
       border: 3px solid var(--text-color);
       border-radius: 50%; }
+
+.card-projects, .card-aboutme, .card-obj_goal {
+  scroll-margin-top: var(--header-height); }
 
 .card-diagonal {
   position: relative; }
