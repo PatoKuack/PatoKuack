@@ -31,7 +31,7 @@
   "bugs": {
     "url": "https://github.com/PatoKuack/portafolio/issues"
   },
-  "homepage": "https://patokuack.github.io/",
+  "homepage": "https://patokuack.github.io",
   "devDependencies": {
     "@babel/core": "^7.19.6",
     "@babel/plugin-transform-runtime": "^7.19.6",
@@ -54,6 +54,5 @@
     "terser-webpack-plugin": "^5.3.6",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0"
-  },
-  "homepage": "https://patokuack.github.io/main"
+  }
 }
