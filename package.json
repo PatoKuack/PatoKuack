@@ -31,7 +31,7 @@
   "bugs": {
     "url": "https://github.com/PatoKuack/PatoKuack.github.io/issues"
   },
-  "homepage": "https://patokuack.github.io/",
+  "homepage": "https://patokuack.github.io/PatoKuack.github.io",
   "devDependencies": {
     "@babel/core": "^7.19.6",
     "@babel/plugin-transform-runtime": "^7.19.6",
