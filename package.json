@@ -9,7 +9,7 @@
     "build-dev": "webpack --config webpack.config.dev.js",
     "watch": "webpack --watch --config webpack.config.dev.js",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,7 @@
   "bugs": {
     "url": "https://github.com/PatoKuack/portafolio/issues"
   },
-  "homepage": "https://patokuack.github.io/portafolio_web",
+  "homepage": "https://patokuack.github.io/patokuack.github.io",
   "devDependencies": {
     "@babel/core": "^7.19.6",
     "@babel/plugin-transform-runtime": "^7.19.6",
