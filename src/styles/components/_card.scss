@@ -29,7 +29,12 @@
   }
   &-aboutme-content-unique {
     max-width: 800px;
-    text-align: left;
+    text-align: center;
+  }
+  @include from(m) {
+    &-aboutme-content-unique p {
+      text-align: left;
+    }
   }
   &-projects-content-multiple{
     padding: $normal-space;
@@ -42,7 +47,7 @@
     position: relative;
   }
   &-proj-subtitle{
-    margin-top: -.1rem;
+    // margin-top: -.1rem;
     margin-bottom: $min-space;
     opacity: .6;
     font-size: small;
