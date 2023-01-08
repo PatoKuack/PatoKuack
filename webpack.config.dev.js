@@ -4,17 +4,17 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
-  mode: "production",
+  mode: "development",
   entry: "./src/index.js",
+  watch: false,
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].[contenthash].js",
     assetModuleFilename: 'assets/images/[hash][ext][query]'
   },
-  // watch: true,
-  mode: 'development',
   resolve: {
     extensions: [".js", ".jsx"]
   },
@@ -32,6 +32,7 @@ module.exports = {
       },
       {
         test: /\.html$/,
+        exclude: /node_modules/,
         use: [
           {loader: 'html-loader'}
         ]
@@ -49,6 +50,22 @@ module.exports = {
         type: "asset/resource",
         generator: {
           filename: "assets/images/[name][ext][query]",
+        },
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/i,
+        type: 'asset/resource',
+        /* use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+            }
+          }
+        ], */
+        generator: {
+          filename: 'assets/fonts/[hash][ext][query]',
         },
       }
     ]
@@ -70,6 +87,11 @@ module.exports = {
         }
       ]
     }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'server',
+      generateStatsFile: true,
+      statsOptions: { source: false }
+    }),
   ],
   optimization: {
     minimize: true,
@@ -77,5 +99,16 @@ module.exports = {
       new CssMinimizerPlugin(),
       new TerserPlugin()
     ]
-  }
+  },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "dist"),
+      watch: true,
+    },
+    watchFiles: path.join(__dirname, "./**"),
+    compress: true,
+    historyApiFallback: true,
+    port: 3000,
+    open: true,
+    }
 }

@@ -20,9 +20,11 @@ h1{
 }
 h2{
   font-size: var(--h2-font-size);
+  margin-bottom: $min-space;
 }
 h3, h4, h3, h6{
   font-size: var(--h3-font-size);
+  margin-bottom: $min-space;
 }
 a{
   text-decoration: none;
@@ -30,6 +32,14 @@ a{
 }
 img{
   max-width: 100%;
+}
+hr{
+  width: 80%;
+  height: .1rem;
+  margin: .45rem;
+  background-color: $border-color;
+  text-align: center;
+  border: none;
 }
 
 

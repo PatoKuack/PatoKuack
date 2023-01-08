@@ -10,6 +10,7 @@ module.exports = {
   mode: "production",
   entry: "./src/index.js",
   output: {
+    clean: true,
     path: path.resolve(__dirname, "dist"),
     filename: "[name].[contenthash].js",
     assetModuleFilename: 'assets/images/[hash][ext][query]'
@@ -31,6 +32,7 @@ module.exports = {
       },
       {
         test: /\.html$/,
+        exclude: /node_modules/,
         use: [
           {loader: 'html-loader'}
         ]
@@ -48,6 +50,22 @@ module.exports = {
         type: "asset/resource",
         generator: {
           filename: "assets/images/[name][ext][query]",
+        },
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/i,
+        type: 'asset/resource',
+        /* use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+            }
+          }
+        ], */
+        generator: {
+          filename: 'assets/fonts/[hash][ext][query]',
         },
       }
     ]

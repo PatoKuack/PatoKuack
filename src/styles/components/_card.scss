@@ -1,7 +1,7 @@
 .card{
   // scroll-behavior: smooth;
 
-  &-projects, &-aboutme, &-obj_goal{
+  &-projects, &-aboutme, &-skills{
     scroll-margin-top: $header-height;
   }
 
@@ -15,9 +15,9 @@
       height: 100%;
       background-color: $border-color;
       z-index: var(--z-back);
-      transform: skewY(-1.5deg) scaleY(1.025);
+      transform: skewY(-1.5deg) scaleY(1.025) translateY(1rem);
       @include from(l){
-        transform: skewY(-2deg) scaleY(1.1);
+        transform: skewY(-2deg) scaleY(1.1) translateY(1rem);
       }
     }
   }
@@ -35,6 +35,13 @@
     &-aboutme-content-unique p {
       text-align: left;
     }
+  }
+  &-softskills, &-hardskills {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    list-style-position: inside;
   }
   &-projects-content-multiple{
     padding: $normal-space;
