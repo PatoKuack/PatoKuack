@@ -81,20 +81,27 @@ const changeIdiom = () => {
   let textEnglish = Array.from(document.querySelectorAll('.text-english'));
   
   /* Guardando el tema en el navegador del usuario */
-  let savingPreferenceIdiom = localStorage.getItem('languagesaved');
+  let savingPreferenceIdiom = localStorage.getItem('language');
   let languagePref;
 
-  if(savingPreferenceIdiom === 'spanish'){
-    textSpanish.map(changeDisplayEn => changeDisplayEn.style.display = "inherit");
-    textEnglish.map(changeDisplayEs => changeDisplayEs.style.display = "none");
-  }else if(savingPreferenceIdiom === 'english'){
-    textSpanish.map(changeDisplayEn => changeDisplayEn.style.display = "none");
-    textEnglish.map(changeDisplayEs => changeDisplayEs.style.display = "inherit");
-  }
+  window.addEventListener('load', () => {
+    
+    if(savingPreferenceIdiom === 'spanish'){
+      switchIdiom.checked = true;
+      textSpanish.map(changeDisplayEn => changeDisplayEn.style.display = "inherit");
+      textEnglish.map(changeDisplayEs => changeDisplayEs.style.display = "none");
+    }else if(savingPreferenceIdiom === 'english'){
+      switchIdiom.checked = false;
+      textSpanish.map(changeDisplayEn => changeDisplayEn.style.display = "none");
+      textEnglish.map(changeDisplayEs => changeDisplayEs.style.display = "inherit");
+    }
+
+  });
+  
   /* --------------------------------------------- */
 
   switchIdiom.addEventListener('change', () => {
-    if(switchIdiom.checked == false){
+    if(switchIdiom.checked == true){
       textSpanish.map(changeDisplayEn => changeDisplayEn.style.display = "inherit");
       textEnglish.map(changeDisplayEs => changeDisplayEs.style.display = "none");
       /* Guardando el tema en el navegador del usuario */
@@ -109,7 +116,7 @@ const changeIdiom = () => {
     }
     
       /* Guardando el tema en el navegador del usuario */
-      localStorage.setItem('languagesaved', languagePref);
+      localStorage.setItem('language', languagePref);
       /* --------------------------------------------- */
   });
 }
@@ -139,7 +146,7 @@ const lightDarkScheme = () => {
   });
 
   /* Guardando el tema en el navegador del usuario */
-  let savingPreferenceTheme = localStorage.getItem('themesaved');
+  let savingPreferenceTheme = localStorage.getItem('theme');
   let themePref;
 
   if(savingPreferenceTheme === 'dark'){
@@ -170,7 +177,7 @@ const lightDarkScheme = () => {
       /* --------------------------------------------- */
     }
     /* Guardando el tema en el navegador del usuario */
-    localStorage.setItem('themesaved', themePref);
+    localStorage.setItem('theme', themePref);
     /* --------------------------------------------- */
   });
 }
