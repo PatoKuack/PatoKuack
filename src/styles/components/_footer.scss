@@ -24,10 +24,13 @@
   align-items: space-between;
   
   &-container{
+    display: flex;
+    flex-direction: row;
     padding-top: $min-space;
     height: $max-space;
   }
   &-logo{
+    display: block;
     padding: 0 $min-space;
     height: 100%;
   }

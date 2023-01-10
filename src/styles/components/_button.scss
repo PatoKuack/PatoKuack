@@ -13,7 +13,16 @@
   }
 }
 
-[class*="button-l"]:hover{
-  color: transparent;
-  cursor: pointer;
+[class*="button-l"]{
+  padding: .4rem .6rem;
+  font-size: var(--small-font-size);
+
+  @include from(m){
+    font-size: var(--body-font-size);
+  }
+
+  &:hover{
+    color: transparent;
+    cursor: pointer;
+  }
 }

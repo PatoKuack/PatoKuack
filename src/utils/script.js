@@ -87,11 +87,11 @@ const changeIdiom = () => {
   window.addEventListener('load', () => {
     
     if(savingPreferenceIdiom === 'spanish'){
-      switchIdiom.checked = true;
+      switchIdiom.checked = false;
       textSpanish.map(changeDisplayEn => changeDisplayEn.style.display = "inherit");
       textEnglish.map(changeDisplayEs => changeDisplayEs.style.display = "none");
     }else if(savingPreferenceIdiom === 'english'){
-      switchIdiom.checked = false;
+      switchIdiom.checked = true;
       textSpanish.map(changeDisplayEn => changeDisplayEn.style.display = "none");
       textEnglish.map(changeDisplayEs => changeDisplayEs.style.display = "inherit");
     }
@@ -101,7 +101,7 @@ const changeIdiom = () => {
   /* --------------------------------------------- */
 
   switchIdiom.addEventListener('change', () => {
-    if(switchIdiom.checked == true){
+    if(switchIdiom.checked == false){
       textSpanish.map(changeDisplayEn => changeDisplayEn.style.display = "inherit");
       textEnglish.map(changeDisplayEs => changeDisplayEs.style.display = "none");
       /* Guardando el tema en el navegador del usuario */
@@ -125,9 +125,9 @@ const lightDarkScheme = () => {
   window.addEventListener('load', () => {
     
     if((getComputedStyle(bodyId).color == "rgb(240, 248, 255)") || (getComputedStyle(bodyId).color == "#f0f8ff")){
-      switchLD.checked = true;
-    }else{
       switchLD.checked = false;
+    }else{
+      switchLD.checked = true;
     }
 
   });
@@ -157,7 +157,7 @@ const lightDarkScheme = () => {
   /* --------------------------------------------- */
 
   switchLD.addEventListener('change', () => {
-    if(switchLD.checked == false){
+    if(switchLD.checked == true){
       // if(schemeState){
         bodyId.classList.add('light-theme');
       // }else{
