@@ -7,6 +7,15 @@
     background-image: url('../assets/icons/github_button_dark.svg');
   }
 }
+.button-l-figma{
+  background-image: url('../assets/icons/figma_button.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  @media (prefers-color-scheme : dark) {
+    background-image: url('../assets/icons/figma_button_dark.svg');
+  }
+}
 .button-l-web{
   background-image: url('../assets/icons/working_button.svg');
   background-repeat: no-repeat;
