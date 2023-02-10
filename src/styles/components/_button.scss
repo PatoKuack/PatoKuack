@@ -1,3 +1,10 @@
+:root {
+  --font-size: var(--small-font-size);
+  @include from(m){
+    --font-size: var(--body-font-size);
+  }
+}
+
 .button{
   color: $button-color;
   display: inline-block;
@@ -13,16 +20,26 @@
   }
 }
 
-[class*="button-l"]{
+.button-l{
   padding: .4rem .6rem;
-  font-size: var(--small-font-size);
-
-  @include from(m){
-    font-size: var(--body-font-size);
-  }
+  font-size: var(--font-size);
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 
   &:hover{
     color: transparent;
     cursor: pointer;
+  }
+
+  &-github {
+    background-image: url("../assets/icons/github_button.svg");
+  }
+  &-web{
+    background-image: url('../assets/icons/working_button.svg');
+  }
+  &-figma{
+    background-image: url('../assets/icons/figma_button.svg');
   }
 }

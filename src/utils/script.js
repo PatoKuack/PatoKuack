@@ -8,6 +8,8 @@ const bodyId = document.getElementById('body'),
       profileImage = document.getElementById('banner-container-img'),
       bannerBalloon = document.getElementById('banner-balloon'),
       bannerBalloonText = document.getElementById('banner-balloon-text'),
+      hardskillsConteinerIcons = document.getElementById('hardskills-content__icons'),
+      techBalloonText = Array.from(document.querySelectorAll('.hardskills-tech__icon')),
       switchIdiom = document.getElementById('switch-idioms'),
       containerSwitchLD = document.getElementById('switch-lightdark-container'),
       switchLD = document.getElementById('switch-lightdark'),
@@ -74,6 +76,22 @@ const showGreatBalloon = () => {
       bannerBalloonText.classList.remove("showgreat");
     });
   // });
+}
+
+const showTechBalloon = () => {
+  techBalloonText.map(setBalloon => {
+    let techDescription = document.createElement('div');
+    techDescription.classList.add('balloon-description');
+    getChildrenAlt = setBalloon.children[0].alt;
+    techDescription.textContent = `${getChildrenAlt}`;
+    setBalloon.insertBefore(techDescription, setBalloon.children[0]);
+  });
+
+  hardskillsConteinerIcons.addEventListener('click', () => {
+    techBalloonText.map(showBalloon => {
+      showBalloon.classList.toggle('show');
+    });
+  });
 }
 
 const changeIdiom = () => {
@@ -185,5 +203,6 @@ const lightDarkScheme = () => {
 showMenu();
 showProfileImage();
 showGreatBalloon();
+showTechBalloon();
 changeIdiom();
 lightDarkScheme();
