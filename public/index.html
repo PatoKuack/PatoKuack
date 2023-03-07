@@ -36,7 +36,7 @@
   <!-- header: título y navegador -->
   <header class="header">
     <div class="header-container">
-      <a href="#banner" class="heder-container-logo">
+      <a href="#banner" class="header-container__logo">
         <?xml version="1.0" encoding="utf-8"?>
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
           viewBox="0 0 97.03 106.57" style="enable-background:new 0 0 97.03 106.57;" xml:space="preserve" alt="logo de pato" title="logo de pato" class="logo">
@@ -84,45 +84,68 @@
         </svg>
         <span class="text-logo">Pato Kuack</span>
       </a>
-      <div class="header-container-options">
-        <label class="switch-idioms">
-          <input type="checkbox" class="switch-idioms-input" id="switch-idioms">
-          <div class="switch-idioms-content switch-round">
-            <div class="switch-idioms-slider">
-              <img src="../src/assets/icons/mexico.png" alt="deslizador de la bandera de México" class="switch-idioms-slider__mex">
-              <img src="../src/assets/icons/eeuu.png" alt="deslizador de la bandera de Estados Unidos" class="switch-idioms-slider__eeuu">
+      <div class="header-container__menus">
+        <div class="toggle" id="menu-toggle">
+          <div class="toggle-lines"></div>
+        </div>
+        <nav class="navigator" id="menu-navigator">
+          <ul class="menu">
+            <a class="menu-link" href="#aboutme">
+              <li class="menu-item text-spanish">Acerca de mí</li>
+              <li class="menu-item text-english">About me</li>
+            </a>
+            <a class="menu-link" href="#skills">
+              <li class="menu-item text-spanish">Habilidades</li>
+              <li class="menu-item text-english">Skills</li>
+            </a>
+            <a class="menu-link" href="#projects">
+              <li class="menu-item text-spanish">Proyectos</li>
+              <li class="menu-item text-english">Projects</li>
+            </a>
+            <!-- <a class="menu-link" href="#experience"><li class="menu-item">Experiencia</li></a> -->
+            <a class="menu-link" href="#footer">
+              <li class="menu-item text-spanish">Redes sociales</li>
+              <li class="menu-item text-english">Social media</li>
+            </a>
+          </ul>
+        </nav>
+        <div class="settings" id="menu-settings">
+          <?xml version="1.0" encoding="utf-8"?>
+          <svg version="1.1" id="menu-settings__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 468.2 468.2" style="enable-background:new 0 0 468.2 468.2;" xml:space="preserve">
+          <style type="text/css">
+            .st0{fill:currentColor;}
+          </style>
+          <path class="st0" d="M433.2,182h-16.8c-6.3,0-11.9-4-14.1-9.9c-1.6-4.4-3.4-8.8-5.4-13c-2.6-5.7-1.5-12.5,2.9-17l11.9-11.9
+            c13.7-13.7,13.7-35.8,0-49.5l-24.2-24.2c-13.7-13.7-35.8-13.7-49.5,0l-11.9,11.9c-4.5,4.5-11.2,5.6-17,2.9c-4.3-2-8.6-3.8-13.1-5.4
+            c-5.9-2.2-9.9-7.8-9.9-14.1V35c0-19.3-15.7-35-35-35H217c-19.3,0-35,15.7-35,35v16.7c0,6.3-4,11.9-9.9,14.1
+            c-4.4,1.6-8.8,3.4-13.1,5.4c-5.8,2.6-12.5,1.5-17-2.9l-11.8-11.8c-13.7-13.7-35.8-13.7-49.5,0L56.4,80.6
+            c-13.7,13.7-13.7,35.8,0,49.5L68.3,142c4.5,4.5,5.6,11.2,2.9,17c-2,4.3-3.8,8.6-5.4,13.1C63.6,178,58,182,51.7,182H35
+            c-19.3,0-35,15.7-35,35v34.2c0,19.3,15.7,35,35,35h16.7c6.3,0,11.9,4,14.1,9.9c1.6,4.5,3.4,8.8,5.4,13.1c2.6,5.7,1.5,12.5-2.9,17
+            L56.5,338c-13.7,13.7-13.7,35.8,0,49.5l24.2,24.2c13.7,13.7,35.8,13.7,49.5,0l11.8-11.8c4.5-4.5,11.2-5.6,17-2.9
+            c4.3,2,8.6,3.8,13.1,5.4c5.9,2.2,9.9,7.8,9.9,14.1v16.7c0,19.3,15.7,35,35,35h34.2c19.3,0,35-15.7,35-35v-16.7
+            c0-6.3,4-11.9,9.9-14.1c4.4-1.6,8.8-3.4,13-5.4c5.7-2.7,12.5-1.5,17,2.9l11.9,11.8c13.7,13.7,35.8,13.7,49.5,0l24.2-24.2
+            c13.7-13.7,13.7-35.8,0-49.5l-11.8-11.8c-4.5-4.5-5.6-11.2-2.9-17c2-4.3,3.8-8.6,5.4-13.1c2.2-5.9,7.8-9.9,14.1-9.9h16.8
+            c19.3,0,35-15.7,35-35V217C468.2,197.6,452.5,182,433.2,182z M234,336.1c-56.4,0-102-45.7-102-102c0-56.4,45.7-102,102-102
+            s102,45.7,102,102C336.1,290.4,290.4,336.1,234,336.1z"/>
+          </svg>
+        </div>
+        <div class="settings-options" id="menu-settings-options">
+          <label class="switch-idioms" id="switch-idioms-container">
+            <input type="checkbox" class="switch-idioms-input" id="switch-idioms">
+            <div class="switch-idioms-content switch-round">
+              <div class="switch-idioms-slider">
+                <img src="../src/assets/icons/mexico.png" alt="deslizador de la bandera de México" class="switch-idioms-slider__mex">
+                <img src="../src/assets/icons/eeuu.png" alt="deslizador de la bandera de Estados Unidos" class="switch-idioms-slider__eeuu">
+              </div>
             </div>
-          </div>
-        </label>
-        <label class="switch-lightdark" id="switch-lightdark-container">
-          <input type="checkbox" class="switch-lightdark-input" id="switch-lightdark">
-          <div class="switch-lightdark-moonsun" id="switch-lightdark-moonsun"></div>
-        </label>
+          </label>
+          <label class="switch-lightdark" id="switch-lightdark-container">
+            <input type="checkbox" class="switch-lightdark-input" id="switch-lightdark">
+            <div class="switch-lightdark-moonsun" id="switch-lightdark-moonsun"></div>
+          </label>
+        </div>
       </div>
-      <div class="toggle" id="menu-toggle">
-        <div class="toggle-lines"></div>
-      </div>
-      <nav class="navigator" id="menu-navigator">
-        <ul class="menu">
-          <a class="menu-link" href="#aboutme">
-            <li class="menu-item text-spanish">Acerca de mí</li>
-            <li class="menu-item text-english">About me</li>
-          </a>
-          <a class="menu-link" href="#skills">
-            <li class="menu-item text-spanish">Habilidades</li>
-            <li class="menu-item text-english">Skills</li>
-          </a>
-          <a class="menu-link" href="#projects">
-            <li class="menu-item text-spanish">Proyectos</li>
-            <li class="menu-item text-english">Projects</li>
-          </a>
-          <!-- <a class="menu-link" href="#experience"><li class="menu-item">Experiencia</li></a> -->
-          <a class="menu-link" href="#footer">
-            <li class="menu-item text-spanish">Redes sociales</li>
-            <li class="menu-item text-english">Social media</li>
-          </a>
-        </ul>
-      </nav>
     </div>
   </header>
   <!-- div.banner: presentación -->
@@ -200,16 +223,16 @@
         <h3 class="text-english">Hard Skills:</h3>
         <div class="hardskills-content__icons" id="hardskills-content__icons">
           <div class="hardskills-tech__icon">
-            <img class="tech-icon" src="../src/assets/icons/git.svg" alt="Git/GitHub" title="Git/GitHub">
+            <img class="tech-icon" src="../src/assets/icons/git.svg" alt="Git" title="Git">
           </div>
           <div class="hardskills-tech__icon">
             <img class="tech-icon" src="../src/assets/icons/html5.svg" alt="HTML5" title="HTML5">
           </div>
-          <div class="hardskills-tech__icon">
+          <!-- <div class="hardskills-tech__icon">
             <img class="tech-icon" src="../src/assets/icons/css3.svg" alt="CSS3" title="CSS3">
-          </div>
+          </div> -->
           <div class="hardskills-tech__icon">
-            <img class="tech-icon" src="../src/assets/icons/sass.svg" alt="Sass" title="Sass">
+            <img class="tech-icon" src="../src/assets/icons/sass.svg" alt="Sass" title="CSS3/Sass">
           </div>
           <div class="hardskills-tech__icon">
             <img class="tech-icon" src="../src/assets/icons/tailwind_css.svg" alt="Tailwind" title="Tailwind">
@@ -220,12 +243,12 @@
           <div class="hardskills-tech__icon">
             <img class="tech-icon" src="../src/assets/icons/javascript.svg" alt="JavaScript" title="JavaScript">
           </div>
-          <div class="hardskills-tech__icon">
+          <!-- <div class="hardskills-tech__icon">
             <img class="tech-icon" src="../src/assets/icons/npm.svg" alt="npm" title="npm">
-          </div>
-          <div class="hardskills-tech__icon">
+          </div> -->
+          <!-- <div class="hardskills-tech__icon">
             <img class="tech-icon" src="../src/assets/icons/nodejs.svg" alt="node.js" title="node.js">
-          </div>
+          </div> -->
           <div class="hardskills-tech__icon">
             <img class="tech-icon" src="../src/assets/icons/webpack.svg" alt="webpack" title="webpack">
           </div>

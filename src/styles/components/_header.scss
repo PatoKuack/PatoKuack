@@ -11,14 +11,31 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: $normal-space;
-  padding-right: $normal-space;
   height: 100%;
-}
-.heder-container-logo{
-  display: flex;
-  align-items: center;
-  scroll-padding-top: $header-height;
+  padding-left: $min-space;
+  padding-right: $min-space;
+  @include from(m){
+    padding-left: $normal-space;
+    padding-right: $normal-space;
+  }
+  
+  &__logo{
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    // align-content: center;
+    scroll-padding-top: $header-height;
+  }
+  &__menus{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+    @include from(s){
+      padding: 0 $min-space;
+    }
+  }
 }
 .logo{
   height: calc(#{$header-height} / 1.8);
@@ -26,4 +43,5 @@
 }
 .text-logo{
   padding-left: $min-space;
+  align-self: center;
 }

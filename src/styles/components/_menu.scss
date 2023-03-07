@@ -66,8 +66,9 @@
 
 .toggle{ //Botón hamburguesa.
   width: 2.2rem;
-  height: 1.8rem;
+  height: $toggle-height;
   position: relative;
+  margin-right: $normal-space;
   cursor: pointer;
   transition: transform .5s;
 
@@ -80,6 +81,7 @@
     height: 20%;
     background-color: $text-color;
     position: absolute;
+    border-radius: .5rem;
   }
 
   //Animación de botón hamburguesa.
@@ -117,5 +119,40 @@
 
   @include from(m){
     display: none;
+  }
+}
+
+.settings-options{
+  position: fixed;
+  top: var(--header-height);
+  right: -5rem;
+  display: flex;
+  flex-direction: column;
+  padding: $min-space;
+  transition-property: right;
+  transition-duration: .5s;
+
+  @include from(s){
+    padding-right: $normal-space;
+  }
+
+  &.show{
+    right: 0;
+  }
+}
+.settings{
+  min-height: calc(var(--header-height)/1.8);
+  height: $toggle-height;
+  width: $toggle-height;
+  cursor: pointer;
+  transition-property: transform;
+  transition-duration: .5s;
+
+  &.active{
+    transform: rotateZ(90deg);
+  }
+
+  & > *{
+    pointer-events: none;
   }
 }

@@ -14,13 +14,14 @@
   }
   // -------------------------------------
 
+  min-height: 50vh;
   padding: var(--banner-padding);
   position: relative;
   text-align: center;
   clip-path: polygon(0 0, 100% 0, 100% 94%, 50% 100%, 0 94%, 0 0);
   // background-color: $border-color;
   background-image: linear-gradient(0deg, $border-color 30%, $background-color 90%);
-  transition-property: height, clip-path, color;
+  transition-property: min-height, clip-path, color;
   transition-duration: .5s;
 
   &-heroimage{
@@ -32,15 +33,21 @@
     object-fit: contain;
     object-position: center;
   }
+  & > &-container, & > &-container > &-container-welcome{
+    transition-property: height;
+    transition-duration: .5s;
+  }
   &.imageShow{
-    height: 100vh;
+    display: flex;
+    min-height: 100vh;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 94%, 0 100%, 0 0);
     color: transparent;
     padding: var(--header-height) 0 6vh 0;
   }
   &.imageShow > &-container, &.imageShow > &-container > &-container-welcome{
-    display: flex;
-    height: 100%;
+    display: block;
+    margin: auto;
+    height: calc(100vh - var(--banner-padding) - var(--header-height));
   }
   &.imageShow [class*="title"]{
     display: none;
@@ -58,30 +65,31 @@
 
   &-img{
     margin-bottom: $normal-space;
+    width: var(--banner-image-height);
     max-height: var(--banner-image-height);
     display: block;
     border: 3px solid $text-color;
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0px calc(var(--banner-image-height) / 2.8) 30px -50px rgb(11, 54, 65);
+    animation-name      : spin-y-reverse;
+    animation-duration  : .6s;
     @include from(m){
       box-shadow: 0px calc(var(--banner-image-height) / 3.5) 30px -50px black;
     }
-    transition-property: transform, border-radius;
+    transition-property: width, height, transition, border-radius;
     transition-duration: .5s;
   }
   &-img.imageShow{
     // transform: scale3d(2, 2, 2) translate3d(0, calc(var(--header-height)), 0);
-    margin: auto 0;
+    margin: auto;
     width: 100%;
-    max-height: 100%;
+    max-height: calc(94vh - var(--header-height));
     border-radius: 0%;
     border: none;
-    
-    @include from(m){
-      margin: 0 auto;
-      height: 100%;
-    }
+    animation-name      : spin-y;
+    animation-duration  : .5s;
+    animation-direction: normal;
   }
 
   &-welcome{
@@ -125,23 +133,53 @@
     }
   }
   &.showgreat{
-    animation-name    : balloon;
-    animation-duration: 5s;
-    animation-fill-mode: forwards;
-    transform-origin: left bottom;
+    animation-name      : balloon;
+    animation-duration  : 5s;
+    animation-fill-mode : forwards;
+    transform-origin    : left bottom;
   }
-  @keyframes balloon{
-    from{
-      transform: scale3d(0, 0, 0);
-    }
-    10%{
-      transform: scale3d(1, 1, 1);
-    }
-    90%{
-      transform: scale3d(1, 1, 1);
-    }
-    to{
-      transform: scale3d(0, 0, 0);
-    }
+}
+
+
+@keyframes balloon{
+  from{
+    transform: scale3d(0, 0, 0);
+  }
+  10%{
+    transform: scale3d(1, 1, 1);
+  }
+  90%{
+    transform: scale3d(1, 1, 1);
+  }
+  to{
+    transform: scale3d(0, 0, 0);
+  }
+}
+@keyframes spin-y{
+  from{
+    transform: rotate3d(0, 1, 0, 0deg); 
+  }
+  10%{
+    transform: rotate3d(0, 1, 0, 40deg); 
+  }
+  90%{
+    transform: rotate3d(0, 1, 0, 280deg); 
+  }
+  to{
+    transform: rotate3d(0, 1, 0, 360deg); 
+  }
+}
+@keyframes spin-y-reverse{
+  from{
+    transform: rotate3d(0, 1, 0, 360deg) scale3d(0, 0, 3);
+  }
+  10%{
+    transform: rotate3d(0, 1, 0, 280deg);
+  }
+  90%{
+    transform: rotate3d(0, 1, 0, 40deg);
+  }
+  to{
+    transform: rotate3d(0, 1, 0, 0deg) scale3d(0, 0, 1);
   }
 }
