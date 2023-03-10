@@ -51,7 +51,7 @@ function resizeRemoveClass(element, classElement) {
 
 
 
-const showMenu = () => {
+const showNav = () => {
   // Si existe el menú hamburguesa y el navegador, entonces...
   if (toggle && nav) {
     //Si se hace clic en el boton hamburguesa, se colocarán las clases "show" y "active".
@@ -358,7 +358,7 @@ const removeClassClickOut = () => {
 
 
 
-showMenu();
+showNav();
 showSettings();
 showProfileImage();
 removeGreatBalloon();
