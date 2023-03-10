@@ -81,6 +81,7 @@ $breackpoints: (
   --h3-font-size    : 1.1rem;
   --body-font-size  : .9rem;
   --small-font-size : .75rem;
+  --outline-width   : 2px;
   //-------------------------------------
   @media screen and (min-width: map_get($breackpoints, m)){
     --h1-font-size    : 2rem;

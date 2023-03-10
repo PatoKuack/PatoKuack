@@ -63,6 +63,9 @@
     margin: 0 auto;
   }
 
+  &-button{
+    margin: var(--outline-width);
+  }
   &-img{
     margin-bottom: $normal-space;
     width: var(--banner-image-height);

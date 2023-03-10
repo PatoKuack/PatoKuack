@@ -5,6 +5,8 @@ const bodyId = document.getElementById('body'),
       banner =  document.getElementById('banner'),
       // main =  document.getElementById('card'),
       // footer =  document.getElementById('footer'),
+      navLink = Array.from(document.querySelectorAll('.menu-link')),
+      profileImgButton = document.getElementById('banner-container-button'),
       profileImage = document.getElementById('banner-container-img'),
       bannerBalloon = document.getElementById('banner-balloon'),
       bannerBalloonText = document.getElementById('banner-balloon-text'),
@@ -54,8 +56,20 @@ const showMenu = () => {
   if (toggle && nav) {
     //Si se hace clic en el boton hamburguesa, se colocarán las clases "show" y "active".
     toggle.addEventListener('click', () => {
-      nav.classList.toggle('show');
-      toggle.classList.toggle('active');
+      let existShow = confirmClass(nav, "show");
+      if(!existShow) {
+        nav.classList.add('show');
+        toggle.classList.add('active');
+        navLink.map(e => {
+          e.removeAttribute("tabindex");
+        });
+      } else {
+        nav.classList.remove('show');
+        toggle.classList.remove('active');
+        navLink.map(e => {
+          e.setAttribute("tabindex", "-1");
+        });
+      }
     });
     
     resizeRemoveClass(nav, "show");
@@ -67,8 +81,18 @@ const showSettings = () => {
   if (settings && settingsOptions) {
     //Si se hace clic en el botón de herramientas, se colocarán las clases "show" y "active".
     settings.addEventListener('click', () => {
-      settings.classList.toggle('active');
-      settingsOptions.classList.toggle('show');
+      let existShow = confirmClass(settingsOptions, "show");
+      if(!existShow) {
+        settings.classList.add('active');
+        settingsOptions.classList.add('show');
+        switchIdiom.removeAttribute("tabindex");
+        switchLD.removeAttribute("tabindex");
+      } else {
+        settings.classList.remove('active');
+        settingsOptions.classList.remove('show');
+        switchIdiom.setAttribute("tabindex", "-1");
+        switchLD.setAttribute("tabindex", "-1");
+      }
     });
     resizeRemoveClass(settingsOptions, "show");
     resizeRemoveClass(settings, "active");
@@ -76,8 +100,8 @@ const showSettings = () => {
 }
 
 const showProfileImage = () => {
-  if(profileImage) {
-    profileImage.addEventListener('click', () => {
+  if(profileImage && profileImgButton) {
+    profileImgButton.addEventListener('click', () => {
       profileImage.classList.toggle('imageShow');
       banner.classList.toggle('imageShow');
       /* let existShowClass = confirmClass(profileImage, "imageShow");
@@ -174,6 +198,27 @@ const changeIdiom = () => {
       localStorage.setItem('language', languagePref);
       /* --------------------------------------------- */
   });
+
+  //cuando se de enter en el input, se activará o desactivará.
+  switchIdiom.addEventListener("keypress", e => {
+    if(e.key==="Enter" || e.keyCode===13) {
+      switchIdiom.checked = !switchIdiom.checked;
+      if(switchIdiom.checked === false){
+        textSpanish.map(changeDisplayEn => changeDisplayEn.style.display = "inherit");
+        textEnglish.map(changeDisplayEs => changeDisplayEs.style.display = "none");
+        /* Guardando el tema en el navegador del usuario */
+        languagePref = 'spanish';
+      //si el valor del switch es verdadero, aparecerán los textos en español y se ocultarán los de ingles.
+      }else{
+        textSpanish.map(changeDisplayEn => changeDisplayEn.style.display = "none");
+        textEnglish.map(changeDisplayEs => changeDisplayEs.style.display = "inherit");
+        /* Guardando el tema en el navegador del usuario */
+        languagePref = 'english';
+      }
+      /* Guardando el tema en el navegador del usuario */
+      localStorage.setItem('language', languagePref);
+    }
+  });
 }
 
 const lightDarkScheme = () => {
@@ -210,7 +255,8 @@ const lightDarkScheme = () => {
     bodyId.classList.toggle('light-theme');
   }
   /* --------------------------------------------- */
-
+  
+  //cuando se haya cambios en el input...
   switchLD.addEventListener('change', () => {
     if(switchLD.checked == true){
       // if(schemeState){
@@ -235,18 +281,41 @@ const lightDarkScheme = () => {
     localStorage.setItem('theme', themePref);
     /* --------------------------------------------- */
   });
+
+  //cuando se de enter en el input, se activará o desactivará.
+  switchLD.addEventListener("keypress", e => {
+    if(e.key==="Enter" || e.keyCode===13){
+      switchLD.checked = !switchLD.checked;
+    }
+    if(switchLD.checked === true){
+        bodyId.classList.add('light-theme');
+        bodyId.classList.remove('dark-theme');
+      /* Guardando el tema en el navegador del usuario */
+      themePref = 'light';
+    }else{
+        bodyId.classList.add('dark-theme');
+        bodyId.classList.remove('light-theme');
+      /* Guardando el tema en el navegador del usuario */
+      themePref = 'dark';
+    }
+    /* Guardando el tema en el navegador del usuario */
+    localStorage.setItem('theme', themePref);
+  });
 }
 
-const removeClassesClickOut = () => {
-  if (toggle && nav && settings && settingsOptions && profileImage && hardskillsConteinerIcons && techBalloonText) {
+const removeClassClickOut = () => {
+  if (bodyId && toggle && nav && navLink && settings && settingsOptions && profileImage && hardskillsConteinerIcons && techBalloonText) {
     //Si se da clic fuera del menú, se eliminará la clase "show" y "active".
-    bodyId.addEventListener('click', (event) => {
+    bodyId.addEventListener('click', event => {
       let existShowNav = confirmClass(nav, "show");
       if(existShowNav){
         //si el clic no es en el elemeto nav o toggle y tampoco es en algún elemento que tenga como padre nav o toggle, entonces...
         if(event.target!==nav && event.target.offsetParent!==nav && event.target!==toggle && event.target.offsetParent!==toggle) {
           nav.classList.remove('show');
           toggle.classList.remove('active');
+          navLink.map(e => {
+            e.setAttribute("tabindex", "-1");
+          });
         }
       }
 
@@ -263,13 +332,15 @@ const removeClassesClickOut = () => {
         ) {
           settingsOptions.classList.remove('show');
           settings.classList.remove('active');
+          switchIdiom.setAttribute("tabindex", "-1");
+          switchLD.setAttribute("tabindex", "-1");
         }
       }
 
       let existShowImg = confirmClass(profileImage, "imageShow");
       if(existShowImg){
         //si el clic no es en el elemeto settings u options y tampoco es en algún elemento que tenga como padre settings u options, entonces...
-        if(event.target!==profileImage && event.target.offsetParent!==profileImage && event.target!==banner && event.target.offsetParent!==banner) {
+        if(event.target!==profileImage && event.target!==profileImgButton && event.target!==banner && event.target.offsetParent!==banner) {
           profileImage.classList.remove('imageShow');
           banner.classList.remove('imageShow');
         }
@@ -295,4 +366,4 @@ showTechBalloons();
 changeIdiom();
 lightDarkScheme();
 
-removeClassesClickOut();
+removeClassClickOut();

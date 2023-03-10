@@ -6,6 +6,9 @@
 html{
   scroll-behavior: smooth;
 }
+*:focus{
+  outline-width: var(--outline-width);
+}
 
 body{
   font-family: $font-family-first;

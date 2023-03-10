@@ -5,6 +5,17 @@
   }
 }
 
+button.settings, button.toggle, button.img, button.hardskills-content__icons {
+  background-color: transparent;
+  border: none;
+  color: var(--text-color);
+}
+button.settings:focus, button.toggle:focus, button.img:focus > img, button.hardskills-content__icons:focus {
+  outline-style: solid;
+  outline-width: var(--outline-width);
+  outline-color: var(--text-color);
+}
+
 .button{
   color: $button-color;
   display: inline-block;
