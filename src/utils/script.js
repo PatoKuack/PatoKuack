@@ -21,6 +21,10 @@ const bodyId = document.getElementById('body'),
       switchLDAnimate = document.getElementById('switch-lightdark-moonsun');
 
 
+const mediaBp = matchMedia('(min-width: 768px)');
+//*retorna un objeto del tipo MediaQueryList.*
+/* console.log(mediaBp.matches); */
+//matches es una propiedad que retorna un booleano.
 
 function confirmClass(element, classElement) {
   let confirmation = false;
@@ -37,6 +41,19 @@ function resizeRemoveClass(element, classElement) {
     if (visualViewport.width >= maxWithPhone) {
       element.classList.remove(classElement);
     }
+    //si la página tiene minimo un ancho de 768px, entonce...
+    if(mediaBp.matches) {
+      //remover las clases especificadas del elemento especificado.
+      element.classList.remove(classElement);
+      //remover los tabindex de los links de navegación.
+      navLink.map(e => {
+        e.removeAttribute("tabindex");
+      });
+    } else {
+      navLink.map(e => {
+        e.setAttribute("tabindex", "-1");
+      });
+    }
   });
 }
 /* function removeClass(item, classItem){
@@ -52,8 +69,20 @@ function resizeRemoveClass(element, classElement) {
 
 
 const showNav = () => {
-  // Si existe el menú hamburguesa y el navegador, entonces...
+  //si existe el menú hamburguesa y el navegador, entonces...
   if (toggle && nav) {
+    //evento que se activa al cargar el documento:
+    document.addEventListener('DOMContentLoaded', () => {
+      //si la página tiene minimo un ancho de 768px, entonce...
+      if(mediaBp.matches){
+        //remover los tabindex de los links de navegación.
+        navLink.map(e => {
+          e.removeAttribute("tabindex");
+        });
+      }
+    });
+
+
     //Si se hace clic en el boton hamburguesa, se colocarán las clases "show" y "active".
     toggle.addEventListener('click', () => {
       let existShow = confirmClass(nav, "show");
