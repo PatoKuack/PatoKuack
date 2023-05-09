@@ -257,17 +257,14 @@ const lightDarkScheme = () => {
       switchLD.checked = false;
     }else{
       switchLD.checked = true;
+      switchLDAnimate.classList.remove('sun');
     }
 
   });
   
   containerSwitchLD.addEventListener('click', () => {
-    let className3 = switchLDAnimate.classList[1];
-    let classNumber3 = switchLDAnimate.classList.length;
-    const schemeState = window.matchMedia("(prefers-color-scheme)").matches;
-    if(classNumber3==2 && className3=="scaling"){
-        switchLDAnimate.classList.remove('scaling');
-    }
+    // const schemeState = window.matchMedia("(prefers-color-scheme)").matches;
+    switchLDAnimate.classList.remove('scaling');
     switchLDAnimate.classList.add('scaling');
     switchLDAnimate.addEventListener('animationend', () => {
       switchLDAnimate.classList.remove('scaling');
@@ -279,15 +276,18 @@ const lightDarkScheme = () => {
   let themePref;
 
   if(savingPreferenceTheme === 'dark'){
+    switchLDAnimate.classList.add('sun');
     bodyId.classList.toggle('dark-theme');
   }else if(savingPreferenceTheme === 'light'){
     bodyId.classList.toggle('light-theme');
+    switchLDAnimate.classList.remove('sun');
   }
   /* --------------------------------------------- */
   
   //cuando se haya cambios en el input...
   switchLD.addEventListener('change', () => {
     if(switchLD.checked == true){
+      switchLDAnimate.classList.remove('sun');
       // if(schemeState){
         bodyId.classList.add('light-theme');
       // }else{
@@ -297,6 +297,7 @@ const lightDarkScheme = () => {
       themePref = 'light';
       /* --------------------------------------------- */
     }else{
+      switchLDAnimate.classList.add('sun');
       // if(schemeState){
         bodyId.classList.add('dark-theme');
       // }else{
@@ -313,17 +314,24 @@ const lightDarkScheme = () => {
 
   //cuando se de enter en el input, se activará o desactivará.
   switchLD.addEventListener("keypress", e => {
+    switchLDAnimate.classList.remove('scaling');
     if(e.key==="Enter" || e.keyCode===13){
       switchLD.checked = !switchLD.checked;
+      switchLDAnimate.classList.add('scaling');
+      switchLDAnimate.addEventListener('animationend', () => {
+        switchLDAnimate.classList.remove('scaling');
+      });
     }
     if(switchLD.checked === true){
         bodyId.classList.add('light-theme');
         bodyId.classList.remove('dark-theme');
+        switchLDAnimate.classList.remove('sun');
       /* Guardando el tema en el navegador del usuario */
       themePref = 'light';
     }else{
         bodyId.classList.add('dark-theme');
         bodyId.classList.remove('light-theme');
+        switchLDAnimate.classList.add('sun');
       /* Guardando el tema en el navegador del usuario */
       themePref = 'dark';
     }
