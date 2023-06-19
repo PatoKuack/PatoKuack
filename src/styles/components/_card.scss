@@ -81,6 +81,7 @@
     padding: $min-space;
     background-image: radial-gradient(#f0f8ff 30%, #f0f8ffd6 45%, transparent 70%);
     font-size: var(--small-font-size);
+    pointer-events: none;
   }
   .tech-icon {
     display: inline-block;
